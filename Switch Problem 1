@@ -1,4 +1,4 @@
-package com.conditionalStatements;
+package Switch;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,6 +9,12 @@ public class Ordering {
     static final int BURGER = 120;
     static final int SANDWICH = 100;
     static final int COFFEE = 80;
+    static final int ICECREAM=70;
+    static final int BRIYANI=399;
+    static final int JUICE=100;
+    static final int FRIES = 90; 
+    static final int PASTA = 180;
+    static final int SOFTDRINK = 50;
 
     static double totalBill = 0;
     static String choice;
@@ -42,22 +48,33 @@ public class Ordering {
 
             switch (order) {
 
-                case 1 -> addItem("Pizza", quantity, PIZZA);
+            case 1 -> addItem("Pizza", quantity, PIZZA);
 
-                case 2 -> addItem("Burger", quantity, BURGER);
+            case 2 -> addItem("Burger", quantity, BURGER);
 
-                case 3 -> addItem("Sandwich", quantity, SANDWICH);
+            case 3 -> addItem("Sandwich", quantity, SANDWICH);
 
-                case 4 -> addItem("Coffee", quantity, COFFEE);
+            case 4 -> addItem("Coffee", quantity, COFFEE);
 
-                default -> {
-                    System.out.println("Invalid Selection!");
-                    continue;
-                }
+            case 5 -> addItem("Ice Cream", quantity, ICECREAM);
+
+            case 6 -> addItem("Briyani", quantity, BRIYANI);
+
+            case 7 -> addItem("Juice", quantity, JUICE);
+
+            case 8 -> addItem("Fries", quantity, FRIES);
+
+            case 9 -> addItem("Pasta", quantity, PASTA);
+
+            case 10 -> addItem("Soft Drink", quantity, SOFTDRINK);
+
+            default -> {
+                System.out.println("Invalid Selection!");
+                continue;
             }
-
-            System.out.print("Do you want to order more? (Y/N): ");
-            choice = sc.next();
+        }
+        System.out.print("Do you want to order more? (Y/N): ");
+        choice = sc.next();
 
         } while (choice.equalsIgnoreCase("Y"));
 
@@ -68,12 +85,18 @@ public class Ordering {
 
     static void displayMenu() {
 
-        System.out.println("\n------------ MENU ------------");
-        System.out.println("1. Pizza      ₹250");
-        System.out.println("2. Burger     ₹120");
-        System.out.println("3. Sandwich   ₹100");
-        System.out.println("4. Coffee     ₹80");
-        System.out.println("------------------------------");
+        System.out.println("\n=========== MENU ===========");
+        System.out.println("1. Pizza        ₹" + PIZZA);
+        System.out.println("2. Burger       ₹" + BURGER);
+        System.out.println("3. Sandwich     ₹" + SANDWICH);
+        System.out.println("4. Coffee       ₹" + COFFEE);
+        System.out.println("5. Ice Cream    ₹" + ICECREAM);
+        System.out.println("6. Briyani      ₹" + BRIYANI);
+        System.out.println("7. Juice        ₹" + JUICE);
+        System.out.println("8. Fries        ₹" + FRIES);
+        System.out.println("9. Pasta        ₹" + PASTA);
+        System.out.println("10. Soft Drink  ₹" + SOFTDRINK);
+        System.out.println("============================");
     }
 
     static void addItem(String itemName, int quantity, int unitPrice) {
